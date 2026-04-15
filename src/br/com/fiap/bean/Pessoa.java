@@ -1,6 +1,7 @@
 package br.com.fiap.bean;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Pessoa {
     //Atributos
@@ -26,5 +27,11 @@ public class Pessoa {
     }
     public void setDataDeNascimento(LocalDate dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
+    }
+    //Métodos da classe
+    public int calcularIdade(){
+        LocalDate dataAtual = LocalDate.now();
+        Period idade = Period.between(dataDeNascimento, dataAtual);
+        return  idade.getYears();
     }
 }
