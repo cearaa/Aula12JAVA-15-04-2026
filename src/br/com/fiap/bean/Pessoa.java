@@ -27,12 +27,12 @@ public class Pessoa {
         return dataDeNascimento;
     }
     public void setDataDeNascimento(LocalDate dataDeNascimento) {
+        LocalDate inicio = LocalDate.parse("1899-31-12");
+        //Ou: LocalDate inicio = LocalDate.parse("1900-01-01").minusDays(1);
+        LocalDate fim = LocalDate.now();
+        //Ou: LocalDate fim = LocalDate.now().plusDays(1);
         try {
-            LocalDate inicio = LocalDate.parse("1899-31-12");
-            //Ou: LocalDate inicio = LocalDate.parse("1900-01-01").minusDays(1);
-            LocalDate fim = LocalDate.now();
-            //Ou: LocalDate fim = LocalDate.now().plusDays(1);
-            if (dataDeNascimento.isAfter(inicio) && dataDeNascimento.isBefore(fim) || dataDeNascimento.equals(fim)) {
+            if (dataDeNascimento.isAfter(inicio) && dataDeNascimento.isBefore(fim)) {
                 this.dataDeNascimento = dataDeNascimento;
             } else {
                 throw new Exception("Data fora dos parâmetros permitidos!! (Entre 1900-01-01 ao dia de hoje");
