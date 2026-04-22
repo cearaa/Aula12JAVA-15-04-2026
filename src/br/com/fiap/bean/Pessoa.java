@@ -39,7 +39,7 @@ public class Pessoa {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-            System.exit(0); //Encerrando o programa após mensagem de erro.
+            System.exit(2); //Encerrando o programa após mensagem de erro.
         }
     }
     //Métodos da classe
